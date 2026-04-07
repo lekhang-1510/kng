@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNG Digital Library | Khám Phá Thế Giới Truyện Kỳ Diệu</title>
+
+    <!-- Google Fonts: Inter & Poppins cho thiết kế hiện đại -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons (Dùng CDN đơn giản) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. Navbar Hiện Đại (Sticky Glassmorphism) -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <i data-lucide="book-open"></i>
+                <span>KNG<span class="dot">.</span>Library</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Trang chủ</a></li>
+                <li class="has-mega">
+                    <a href="#featured">Danh sách truyện <i data-lucide="chevron-down" style="width: 14px; height: 14px; margin-left: 4px; vertical-align: middle;"></i></a>
+                    <!-- MEGA MENU -->
+                    <div class="mega-menu">
+                        <div class="mega-grid">
+                            <div class="mega-col">
+                                <h3>Truyện thiếu nhi</h3>
+                                <ul>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Cậu bé và cuốn sách')">Cậu bé và cuốn sách</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Chú mèo thư viện')">Chú mèo thư viện</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Cánh cửa bí mật')">Cánh cửa bí mật</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Khu rừng ánh sáng')">Khu rừng ánh sáng</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <h3>Truyện bí ẩn</h3>
+                                <ul>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Cuốn sách phát sáng')">Cuốn sách phát sáng</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Bóng đen cuối hành lang')">Bóng đen cuối hành lang</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Người gác thư viện')">Người gác thư viện</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Đồng hồ không kim')">Đồng hồ không kim</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <h3>Truyện cảm hứng</h3>
+                                <ul>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Chiếc vé đọc sách')">Chiếc vé đọc sách</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Ước mơ từ trang giấy')">Ước mơ từ trang giấy</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Hành trình tri thức')">Hành trình tri thức</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Ngày đầu đến thư viện')">Ngày đầu đến thư viện</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <h3>Truyện nổi bật</h3>
+                                <ul>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Một buổi chiều mưa')">Một buổi chiều mưa</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Ánh sáng cuối kệ sách')">Ánh sáng cuối kệ sách</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Lời nhắn trong sách cũ')">Lời nhắn trong sách cũ</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Điều kỳ diệu của việc đọc')">Điều kỳ diệu của việc đọc</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#all-stories">Categories</a></li>
+                <li><a href="#all-stories">New Releases</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="menu-toggle"><i data-lucide="menu"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section (Gradient & Illustrative) -->
+    <header id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-text animate-fade-up">
+                <span class="badge">Sách Mới Cập Nhật ✨</span>
+                <h1>Khám phá thế giới <br><span class="gradient-text-hero">truyện kỳ diệu</span></h1>
+                <p>Nơi lưu giữ hàng ngàn câu chuyện hấp dẫn, từ phiêu lưu mạo hiểm đến những bí ẩn vũ trụ xa xôi. Đọc mọi lúc, mọi nơi.</p>
+                <div class="hero-btns">
+                    <a href="#search-section" class="btn btn-primary">Đọc ngay <i data-lucide="chevron-right"></i></a>
+                    <a href="#all-stories" class="btn btn-outline">Xem truyện mới</a>
+                </div>
+            </div>
+            <div class="hero-image animate-fade-up" style="animation-delay: 0.3s;">
+                <!-- Hình minh họa hiện đại -->
+                <div class="floating-card c1 pulse-glow"><i data-lucide="bookmark"></i></div>
+                <div class="floating-card c2 pulse-glow"><i data-lucide="star"></i></div>
+                <div class="hero-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=2670&auto=format&fit=crop" alt="Digital Library Illustration">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Search Section -->
+    <section id="search-section" class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <i data-lucide="search"></i>
+                <input type="text" id="search-input" placeholder="Tìm tên truyện hoặc tác giả...">
+                <button class="btn btn-primary btn-search">Tìm kiếm</button>
+                
+                <!-- Instant Search Results -->
+                <div id="search-results" class="search-results hidden">
+                    <!-- Results will be injected here by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Featured Stories (Truyện Nổi Bật) -->
+    <section id="featured" class="featured-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="title">Truyện Nổi Bật</h2>
+                <p class="subtitle">Những câu chuyện được bạn đọc yêu thích nhất tuần qua</p>
+            </div>
+            <div id="featured-grid" class="featured-grid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. All Stories (Danh Sách Truyện) -->
+    <section id="all-stories" class="stories-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="title">Danh sách thư viện</h2>
+                <div class="filter-tabs">
+                    <button class="tab active" data-cat="all">Tất cả</button>
+                    <button class="tab" data-cat="adventure">Phiêu lưu</button>
+                    <button class="tab" data-cat="scifi">Viễn tưởng</button>
+                    <button class="tab" data-cat="mystery">Kỳ bí</button>
+                </div>
+            </div>
+            <div id="stories-grid" class="stories-grid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Reading Modal (Popup Modal) -->
+    <div id="reading-modal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-controls">
+                    <button id="font-decrease" class="btn-tool" title="Giảm cỡ chữ">A-</button>
+                    <button id="font-increase" class="btn-tool" title="Tăng cỡ chữ">A+</button>
+                </div>
+                <button id="close-modal" class="btn-close"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i data-lucide="book-open"></i>
+                        <span>KNG<span class="dot">.</span>Library</span>
+                    </div>
+                    <p>Nền tảng thư viện kỹ thuật số hàng đầu. Đưa bạn đến với những chân trời mới thông qua từng trang
+                        viết.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Khám Phá</h3>
+                    <ul>
+                        <li><a href="#">Về KNG</a></li>
+                        <li><a href="#">Blog sách</a></li>
+                        <li><a href="#">Tác giả mới</a></li>
+                        <li><a href="#">Quy định bảo mật</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Liên Hệ</h3>
+                    <ul>
+                        <li><i data-lucide="mail"></i> hotro@kng.com</li>
+                        <li><i data-lucide="phone"></i> +84 123 456 789</li>
+                        <li><i data-lucide="map-pin"></i> Quận 1, TP. Hồ Chí Minh</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KNG Project. Đồ án thiết kế Web chuyên nghiệp.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script xử lý logic -->
+    <script>
+        // Init Lucide Icons sau khi load DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
