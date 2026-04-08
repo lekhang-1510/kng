@@ -11,8 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Lucide Icons (Dùng CDN đơn giản) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -23,62 +22,129 @@
     <nav class="navbar" id="navbar">
         <div class="container navbar-content">
             <div class="logo">
-                <i data-lucide="book-open"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                 <span>KNG<span class="dot">.</span>Library</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Trang chủ</a></li>
                 <li class="has-mega">
-                    <a href="#featured">Danh sách truyện <i data-lucide="chevron-down" style="width: 14px; height: 14px; margin-left: 4px; vertical-align: middle;"></i></a>
+                    <a href="#featured">Danh sách truyện <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" style="margin-left: 4px; vertical-align: middle;"><path d="m6 9 6 6 6-6"/></svg></a>
                     <!-- MEGA MENU -->
                     <div class="mega-menu">
                         <div class="mega-grid">
                             <div class="mega-col">
                                 <h3>Truyện thiếu nhi</h3>
                                 <ul>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Cậu bé và cuốn sách')">Cậu bé và cuốn sách</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Chú mèo thư viện')">Chú mèo thư viện</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Cánh cửa bí mật')">Cánh cửa bí mật</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Khu rừng ánh sáng')">Khu rừng ánh sáng</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Cậu bé và cuốn sách')">Cậu bé
+                                            và cuốn sách</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Chú mèo thư viện')">Chú mèo
+                                            thư viện</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Cánh cửa bí mật')">Cánh cửa
+                                            bí mật</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Khu rừng ánh sáng')">Khu rừng
+                                            ánh sáng</a></li>
                                 </ul>
                             </div>
                             <div class="mega-col">
                                 <h3>Truyện bí ẩn</h3>
                                 <ul>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Cuốn sách phát sáng')">Cuốn sách phát sáng</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Bóng đen cuối hành lang')">Bóng đen cuối hành lang</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Người gác thư viện')">Người gác thư viện</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Đồng hồ không kim')">Đồng hồ không kim</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Cuốn sách phát sáng')">Cuốn
+                                            sách phát sáng</a></li>
+                                    <li><a href="javascript:void(0)"
+                                            onclick="openByTitle('Bóng đen cuối hành lang')">Bóng đen cuối hành lang</a>
+                                    </li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Người gác thư viện')">Người
+                                            gác thư viện</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Đồng hồ không kim')">Đồng hồ
+                                            không kim</a></li>
                                 </ul>
                             </div>
                             <div class="mega-col">
                                 <h3>Truyện cảm hứng</h3>
                                 <ul>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Chiếc vé đọc sách')">Chiếc vé đọc sách</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Ước mơ từ trang giấy')">Ước mơ từ trang giấy</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Hành trình tri thức')">Hành trình tri thức</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Ngày đầu đến thư viện')">Ngày đầu đến thư viện</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Chiếc vé đọc sách')">Chiếc vé
+                                            đọc sách</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Ước mơ từ trang giấy')">Ước
+                                            mơ từ trang giấy</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Hành trình tri thức')">Hành
+                                            trình tri thức</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Ngày đầu đến thư viện')">Ngày
+                                            đầu đến thư viện</a></li>
                                 </ul>
                             </div>
                             <div class="mega-col">
                                 <h3>Truyện nổi bật</h3>
                                 <ul>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Một buổi chiều mưa')">Một buổi chiều mưa</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Ánh sáng cuối kệ sách')">Ánh sáng cuối kệ sách</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Lời nhắn trong sách cũ')">Lời nhắn trong sách cũ</a></li>
-                                    <li><a href="javascript:void(0)" onclick="openByTitle('Điều kỳ diệu của việc đọc')">Điều kỳ diệu của việc đọc</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Một buổi chiều mưa')">Một
+                                            buổi chiều mưa</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Ánh sáng cuối kệ sách')">Ánh
+                                            sáng cuối kệ sách</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openByTitle('Lời nhắn trong sách cũ')">Lời
+                                            nhắn trong sách cũ</a></li>
+                                    <li><a href="javascript:void(0)"
+                                            onclick="openByTitle('Điều kỳ diệu của việc đọc')">Điều kỳ diệu của việc
+                                            đọc</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </li>
-                <li><a href="#all-stories">Categories</a></li>
-                <li><a href="#all-stories">New Releases</a></li>
+                <li class="has-mega">
+                    <a href="#all-stories">Categories <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" style="margin-left: 4px; vertical-align: middle;"><path d="m6 9 6 6 6-6"/></svg></a>
+                    <div class="mega-menu category-menu">
+                        <div class="mega-grid">
+                            <div class="mega-col">
+                                <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg> Khám phá</h3>
+                                <ul>
+                                    <li><a href="javascript:void(0)" onclick="filterByCategory('Thiếu nhi')">Thiếu nhi</a></li>
+                                    <li><a href="javascript:void(0)" onclick="filterByCategory('Bí ẩn')">Bí ẩn</a></li>
+                                    <li><a href="javascript:void(0)" onclick="filterByCategory('Cảm hứng')">Cảm hứng</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><path d="M4 14h6.5l-1.5 8.2a.5.5 0 0 0 .85.44L19.5 10h-6.5L14.5 1.8a.5.5 0 0 0-.85-.44L4 14z"/></svg> Phổ biến</h3>
+                                <ul>
+                                    <li><a href="javascript:void(0)" onclick="filterByCategory('Nổi bật')">Nổi bật nhất</a></li>
+                                    <li><a href="javascript:void(0)" onclick="filterByCategory('all')">Tất cả thư viện</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega">
+                    <a href="#new-releases">New Releases <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" style="margin-left: 4px; vertical-align: middle;"><path d="m6 9 6 6 6-6"/></svg></a>
+                    <div class="mega-menu releases-menu">
+                        <div class="releases-grid">
+                            <div class="release-item" onclick="openByTitle('Cậu bé và cuốn sách')">
+                                <img src="images/boy_reading.png" alt="New 1" onerror="this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=300&auto=format&fit=crop'">
+                                <div class="release-info">
+                                    <h4>Cậu bé và cuốn sách</h4>
+                                    <span class="badge">New</span>
+                                </div>
+                            </div>
+                            <div class="release-item" onclick="openByTitle('Điều kỳ diệu của việc đọc')">
+                                <img src="https://images.unsplash.com/photo-1491841573634-28140fc7ced7?q=80&w=300&auto=format&fit=crop" alt="New 2">
+                                <div class="release-info">
+                                    <h4>Điều kỳ diệu...</h4>
+                                    <span class="badge">New</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="#footer">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <div class="menu-toggle"><i data-lucide="menu"></i></div>
+                <button class="nav-btn" id="search-toggle" title="Tìm kiếm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </button>
+                <button class="nav-btn" id="theme-toggle" title="Đổi màu nền">
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    <svg id="sun-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m4.93 19.07 1.41-1.41"/><path d="m17.66 6.34 1.41-1.41"/></svg>
+                </button>
             </div>
+
+
         </div>
     </nav>
 
@@ -88,18 +154,20 @@
             <div class="hero-text animate-fade-up">
                 <span class="badge">Sách Mới Cập Nhật ✨</span>
                 <h1>Khám phá thế giới <br><span class="gradient-text-hero">truyện kỳ diệu</span></h1>
-                <p>Nơi lưu giữ hàng ngàn câu chuyện hấp dẫn, từ phiêu lưu mạo hiểm đến những bí ẩn vũ trụ xa xôi. Đọc mọi lúc, mọi nơi.</p>
+                <p>Nơi lưu giữ hàng ngàn câu chuyện hấp dẫn, từ phiêu lưu mạo hiểm đến những bí ẩn vũ trụ xa xôi. Đọc
+                    mọi lúc, mọi nơi.</p>
                 <div class="hero-btns">
-                    <a href="#search-section" class="btn btn-primary">Đọc ngay <i data-lucide="chevron-right"></i></a>
+                    <a href="#search-section" class="btn btn-primary">Đọc ngay <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg></a>
                     <a href="#all-stories" class="btn btn-outline">Xem truyện mới</a>
                 </div>
             </div>
             <div class="hero-image animate-fade-up" style="animation-delay: 0.3s;">
                 <!-- Hình minh họa hiện đại -->
-                <div class="floating-card c1 pulse-glow"><i data-lucide="bookmark"></i></div>
-                <div class="floating-card c2 pulse-glow"><i data-lucide="star"></i></div>
+                <div class="floating-card c1 pulse-glow"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg></div>
+                <div class="floating-card c2 pulse-glow"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
                 <div class="hero-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=2670&auto=format&fit=crop" alt="Digital Library Illustration">
+                    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=2670&auto=format&fit=crop"
+                        alt="Digital Library Illustration">
                 </div>
             </div>
         </div>
@@ -109,10 +177,10 @@
     <section id="search-section" class="search-section">
         <div class="container">
             <div class="search-box">
-                <i data-lucide="search"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 <input type="text" id="search-input" placeholder="Tìm tên truyện hoặc tác giả...">
                 <button class="btn btn-primary btn-search">Tìm kiếm</button>
-                
+
                 <!-- Instant Search Results -->
                 <div id="search-results" class="search-results hidden">
                     <!-- Results will be injected here by JS -->
@@ -121,12 +189,12 @@
         </div>
     </section>
 
-    <!-- 4. Featured Stories (Truyện Nổi Bật) -->
-    <section id="featured" class="featured-section section-padding">
+    <!-- 4. New Releases Section (Danh Sách Truyện Mới) -->
+    <section id="new-releases" class="featured-section section-padding">
         <div class="container">
             <div class="section-header">
-                <h2 class="title">Truyện Nổi Bật</h2>
-                <p class="subtitle">Những câu chuyện được bạn đọc yêu thích nhất tuần qua</p>
+                <h2 class="title">Danh sách truyện mới</h2>
+                <p class="subtitle">Những câu chuyện vừa được cập nhật tại KNG Library</p>
             </div>
             <div id="featured-grid" class="featured-grid">
                 <!-- Rendered by JS -->
@@ -160,7 +228,7 @@
                     <button id="font-decrease" class="btn-tool" title="Giảm cỡ chữ">A-</button>
                     <button id="font-increase" class="btn-tool" title="Tăng cỡ chữ">A+</button>
                 </div>
-                <button id="close-modal" class="btn-close"><i data-lucide="x"></i></button>
+                <button id="close-modal" class="btn-close"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
             </div>
             <div class="modal-body" id="modal-body">
                 <!-- Injected by JS -->
@@ -174,16 +242,24 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo">
-                        <i data-lucide="book-open"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                         <span>KNG<span class="dot">.</span>Library</span>
                     </div>
                     <p>Nền tảng thư viện kỹ thuật số hàng đầu. Đưa bạn đến với những chân trời mới thông qua từng trang
                         viết.</p>
                     <div class="social-links">
-                        <a href="#"><i data-lucide="facebook"></i></a>
-                        <a href="#"><i data-lucide="instagram"></i></a>
-                        <a href="#"><i data-lucide="twitter"></i></a>
-                        <a href="#"><i data-lucide="youtube"></i></a>
+                        <a href="#" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -198,9 +274,9 @@
                 <div class="footer-links">
                     <h3>Liên Hệ</h3>
                     <ul>
-                        <li><i data-lucide="mail"></i> hotro@kng.com</li>
-                        <li><i data-lucide="phone"></i> +84 123 456 789</li>
-                        <li><i data-lucide="map-pin"></i> Quận 1, TP. Hồ Chí Minh</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> hotro@kng.com</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +84 123 456 789</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Quận 1, TP. Hồ Chí Minh</li>
                     </ul>
                 </div>
             </div>
@@ -210,13 +286,7 @@
         </div>
     </footer>
 
-    <!-- Script xử lý logic -->
-    <script>
-        // Init Lucide Icons sau khi load DOM
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        });
-    </script>
+
     <script src="script.js"></script>
 </body>
 

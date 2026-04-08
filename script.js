@@ -190,13 +190,10 @@ function createCard(story) {
 }
 
 function renderAll(data) {
-    // Render 3 truyện đầu làm Featured
     if (featuredGrid) {
         const featured = data.slice(0, 3);
         featuredGrid.innerHTML = featured.map(createCard).join('');
     }
-
-    // Render toàn bộ grid chính
     if (storiesGrid) {
         storiesGrid.innerHTML = data.map(createCard).join('');
     }
@@ -205,21 +202,17 @@ function renderAll(data) {
 // 4. LOGIC TÌM KIẾM & LỌC (SEARCH & FILTER)
 function handleSearch(e) {
     const term = e.target.value.toLowerCase().trim();
-    
-    // 1. Lọc dữ liệu chính cho Grid
-    const filtered = stories.filter(s => 
-        s.title.toLowerCase().includes(term) || 
+    const filtered = stories.filter(s =>
+        s.title.toLowerCase().includes(term) ||
         s.author.toLowerCase().includes(term) ||
         s.desc.toLowerCase().includes(term) ||
         s.category.toLowerCase().includes(term)
     );
-    
-    // Cập nhật grid chính
+
     if (storiesGrid) {
         storiesGrid.innerHTML = filtered.map(createCard).join('');
     }
 
-    // 2. Xử lý Live Search Dropdown
     if (!term) {
         searchResults.classList.add('hidden');
         return;
@@ -242,21 +235,17 @@ function handleSearch(e) {
     } else {
         searchResults.innerHTML = `<div class="no-results">Không tìm thấy truyện phù hợp cho "${term}"</div>`;
     }
-    
     searchResults.classList.remove('hidden');
 }
 
-// Hàm chọn từ kết quả tìm kiếm
 function selectSearchResult(id) {
     openStory(id);
     searchResults.classList.add('hidden');
-    searchInput.value = ''; // Reset ô tìm kiếm sau khi chọn
+    if (searchInput) searchInput.value = '';
 }
 
 function handleFilter(e) {
     const cat = e.target.getAttribute('data-cat');
-    
-    // Update UI tabs
     filterTabs.forEach(t => t.classList.remove('active'));
     e.target.classList.add('active');
 
@@ -272,7 +261,6 @@ function openStory(id) {
     if (!story) return;
 
     const imageUrl = story.image || DEFAULT_IMAGE;
-
     modalBody.innerHTML = `
         <div class="modal-info-grid">
             <img src="${imageUrl}" alt="${story.title}" class="modal-cover" onerror="this.src='${DEFAULT_IMAGE}'; this.onerror=null;">
@@ -288,20 +276,20 @@ function openStory(id) {
 
     modal.classList.remove('hidden');
     modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Khóa scroll nền
+    document.body.style.overflow = 'hidden';
 }
 
 function closeStory() {
     modal.classList.remove('active');
     modal.classList.add('hidden');
-    document.body.style.overflow = 'auto'; // Mở scroll nền
+    document.body.style.overflow = 'auto';
 }
 
 function updateFontSize(delta) {
     currentFontSize += delta;
     if (currentFontSize < 12) currentFontSize = 12;
     if (currentFontSize > 32) currentFontSize = 32;
-    
+
     const content = document.getElementById('story-content-text');
     if (content) {
         content.style.fontSize = `${currentFontSize}px`;
@@ -313,22 +301,40 @@ function openByTitle(title) {
     const story = stories.find(s => s.title === title);
     if (story) {
         openStory(story.id);
+    }
+}
+
+// 9. HÀM LỌC TRUYỆN THEO THỂ LOẠI (DÙNG CHO NAVBAR)
+function filterByCategory(catName) {
+    const storiesSection = document.getElementById('all-stories');
+    if (storiesSection) {
+        storiesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const targetTab = Array.from(filterTabs).find(t =>
+        t.textContent.trim() === catName || t.getAttribute('data-cat') === catName
+    );
+
+    if (targetTab) {
+        targetTab.click();
     } else {
-        console.warn(`Không tìm thấy truyện: ${title}`);
+        const filtered = (catName === 'all') ? stories : stories.filter(s => s.category === catName);
+        if (storiesGrid) {
+            storiesGrid.innerHTML = filtered.map(createCard).join('');
+        }
+        filterTabs.forEach(t => t.classList.remove('active'));
     }
 }
 
 // 6. HIỆU ỨNG NAVBAR & SCROLL TRACKING
 window.addEventListener('scroll', () => {
-    // Background thay đổi khi scroll
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
 
-    // Active link theo section
-    const sections = ['home', 'featured', 'all-stories', 'footer'];
+    const sections = ['home', 'new-releases', 'all-stories', 'footer'];
     sections.forEach(id => {
         const section = document.getElementById(id);
         if (section) {
@@ -349,9 +355,8 @@ window.addEventListener('scroll', () => {
 document.addEventListener('DOMContentLoaded', () => {
     renderAll(stories);
 
-    // Event Listeners
     if (searchInput) searchInput.addEventListener('input', handleSearch);
-    
+
     if (filterTabs) {
         filterTabs.forEach(tab => {
             tab.addEventListener('click', handleFilter);
@@ -359,8 +364,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (closeModal) closeModal.addEventListener('click', closeStory);
-    
-    // Đóng khi click ra ngoài overlay
+
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const moonIcon = document.getElementById('moon-icon');
+    const sunIcon = document.getElementById('sun-icon');
+    const body = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'dark') {
+        moonIcon?.classList.add('hidden');
+        sunIcon?.classList.remove('hidden');
+    }
+
+    themeToggle?.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        moonIcon?.classList.toggle('hidden');
+        sunIcon?.classList.toggle('hidden');
+    });
+
+    // Search Toggle in Navbar
+    const searchToggle = document.getElementById('search-toggle');
+    searchToggle?.addEventListener('click', () => {
+        const searchSection = document.getElementById('search-section');
+        searchSection?.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+            const searchInputBox = document.getElementById('search-input');
+            searchInputBox?.focus();
+        }, 600);
+    });
+
     if (modal) {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeStory();
@@ -370,14 +407,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (fontIncrease) fontIncrease.addEventListener('click', () => updateFontSize(2));
     if (fontDecrease) fontDecrease.addEventListener('click', () => updateFontSize(-2));
 
-    // Đóng Search Dropdown khi click ra ngoài
     document.addEventListener('click', (e) => {
         if (searchInput && searchResults && !searchInput.contains(e.target) && !searchResults.contains(e.target)) {
             searchResults.classList.add('hidden');
         }
     });
 
-    // Smooth Scroll cho các link nội bộ
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
